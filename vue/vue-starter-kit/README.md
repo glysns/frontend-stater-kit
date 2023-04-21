@@ -1,24 +1,46 @@
-# vue-starter-kit
+# Digytal - Programação, Pesquisa e Educação
+[www.digytal.com.br](http://www.digytal.com.br)
 
-## Project setup
-```
+[(11) 95894-0362](https://api.whatsapp.com/send?phone=5511958940362)
+
+#### Autores
+- [Gleyson Sampaio](https://github.com/glysns)
+
+## FrontEnd - StarterKit - Vue JS
+
+Este projeto foi criado através do tutorial criando um projeto Vue3 neste repositório. Para utilizamos, basta executar os comandos abaixo:
+
+## Instalando dependências
+
+```shell
 npm install
 ```
 
-### Compiles and hot-reloads for development
-```
+### Inicie a aplicação
+
+```shell
 npm run serve
 ```
 
-### Compiles and minifies for production
+### Abre o seu navegador e cole a url abaixo
+
+```shell
+http://localhost:8080/
 ```
+
+![image](https://github.com/glysns/frontend-stater-kit/blob/main/img/vue.png)
+
+### Compilação para produção
+
+```shell
 npm run build
 ```
 
-### Lints and fixes files
-```
+### Analise da aplicação
+
+```shell
 npm run lint
 ```
 
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
+
+
