@@ -10,9 +10,30 @@
 
 Bem-vindo ao projeto **Front-End Starter Kit - Vue JS** com a finalidade de gerar conteúdos ilustrativos para criar suas primeiras aplicações utilizando a tecnologia Vue JS e suas ferramentas.
 
-## Setup
+### Setup
 
-Abaixo segue uma lista de softwares essencias para começarmos nossa jornada.
+Abaixo utilizando o `npm` ou `yarn` iremos realizar a instalação do **vue-cli** em nosso sistema operacional.
 
-* [NodeJS v18.16+](https://nodejs.org/en/download)
-* [Visual Studio Code](https://code.visualstudio.com/download)
+```shell
+npm install -g @vue/cli
+
+# OR
+yarn global add @vue/cli
+```
+
+Confirmando a instalação do **vue-cli**.
+
+```shell
+vue --version
+```
+
+se preferir garantir que você está usando a ultima versão do **vue-cli**.
+
+```shell
+npm update -g @vue/cli
+
+# OR
+yarn global upgrade --latest @vue/cli
+```
+
+### Criando um projeto

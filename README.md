@@ -16,3 +16,4 @@ Abaixo segue uma lista de softwares essencias para começarmos nossa jornada.
 
 * [NodeJS v18.16+](https://nodejs.org/en/download)
 * [Visual Studio Code](https://code.visualstudio.com/download)
+* [Yarn (opcional)](https://classic.yarnpkg.com/lang/en/docs/install/#windows-stable)
