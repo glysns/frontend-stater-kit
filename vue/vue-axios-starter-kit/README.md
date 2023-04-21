@@ -51,3 +51,6 @@ npm run build
 ```shell
 npm run lint
 ```
+
+
+https://www.youtube.com/watch?v=-3j-LE1d1yg
