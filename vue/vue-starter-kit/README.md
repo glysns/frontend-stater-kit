@@ -8,9 +8,9 @@
 
 ## FrontEnd - StarterKit - Vue JS
 
-Este projeto foi criado através do tutorial criando um projeto [Vue3](https://github.com/glysns/frontend-stater-kit/tree/main/vue) neste repositório. Para utilizamos, basta executar os comandos abaixo:
+Este projeto foi criado através do tutorial criando um projeto [Vue3](https://github.com/glysns/frontend-stater-kit/tree/main/vue) neste repositório. Execute os comandos abaixo:
 
-## Instalando dependências
+### Instalando dependências
 
 ```shell
 npm install
