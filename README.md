@@ -17,3 +17,13 @@ Abaixo segue uma lista de softwares essencias para começarmos nossa jornada.
 * [NodeJS v18.16+](https://nodejs.org/en/download)
 * [Visual Studio Code](https://code.visualstudio.com/download)
 * [Yarn (opcional)](https://classic.yarnpkg.com/lang/en/docs/install/#windows-stable)
+
+Após a instalação das ferramentas citadas acima você poderá optar pela explorar as tecnlogias abaixo:
+
+|Tecnologia|Descrição|
+|----------|---------|
+|Vanilla|Exemplo de aplicações desenvolvidas com HTML, CSS e JavaScript puro|
+|Vue JS| Exemplo de aplicações desenvolvidas com Vue JS|
+|Angular| Exemplo de aplicações desenvolvidas com Angular|
+|React| Exemplo de aplicações desenvolvidas com React|
+
