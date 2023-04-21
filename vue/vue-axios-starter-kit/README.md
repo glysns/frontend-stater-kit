@@ -16,6 +16,16 @@ Este projeto foi criado através do tutorial criando um projeto [Vue3](https://g
 npm install
 ```
 
+### Instalando o Axios
+
+Axios é umas das alternativas para se realizar requisições HTTP.
+
+
+```shell
+npm i axios
+
+```
+
 ### Inicie a aplicação
 
 ```shell
