@@ -12,16 +12,17 @@ export default class Resources {
         return ROOT_API.post(url,body,config)
     }
 
-    put(sufix,body){
-        const config =  this.config({});
-        const url = `${this.path}${sufix}`
+    put(body){
+        const { id } = body;
+        const url = `${this.path}/${id}`
+
         console.log('PUT->', url);
-        return ROOT_API.put(url,body,config)
+        return ROOT_API.put(url,body)
     }
     
-    patch(sufix, body){
+    patch(id,sufix, body){
         const config =  this.config({});
-        const url = `${this.path}${sufix}`
+        const url = `${this.path}/${id}${sufix}`
         console.log('PATCH->', url);
         return ROOT_API.patch(url,body,config)
     }
@@ -50,14 +51,7 @@ export default class Resources {
             params:params,
             transformResponse:[function(data){
                 const response = JSON.parse(data);
-                if(response.code!=200){
-                    response.data=[];
-                    response.page={totalItems:0};
-                    if(response.code >=500)
-                        response.error=true
-
-                    console.log('response-error', response)
-                }
+                //VC PODE CUSTOMIZAR
                 return response
             }]
         }

@@ -13,12 +13,12 @@ class ClienteResource extends Resources {
         return this.get(`/${id}`);
     }
 
-    cadastrar(cadastro) {
+    incluir(cadastro) {
         return this.post('',cadastro);
     }
     
     alterar(cadastro) {
-        return this.put('',cadastro);
+        return this.put(cadastro);
     }
 
     excluir(id) {

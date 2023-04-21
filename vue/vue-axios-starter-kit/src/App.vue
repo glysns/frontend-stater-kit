@@ -1,10 +1,12 @@
 <template>
   <div>
-    <button @click="listar()">Listar Clientes</button>
-    <button @click="buscar()">Buscar Cliente -> ID</button>
-    <input type="text" placeholder="ID" size="1" v-model="id"/>
-    <button>Listar Clientes</button>
-    <button>Listar Clientes</button>
+    <button @click='listar()'>Listar Clientes</button>
+    <button @click='buscar()'>Buscar Cliente -> ID</button>
+    <input type='text' placeholder='ID' size='1' v-model='id'/>
+    <button @click='alterar()'>Alterar ID 1</button>
+    <button @click='incluir()'>Incluir Novo</button>
+    <button @click='excluir()'>Excluir</button>
+    <input type='text' placeholder='ID' size='1' v-model='id'/>
     <h4>Resposta</h4>
     {{  resposta }}
   </div>
@@ -13,7 +15,7 @@
 
 <script>
 
-import { clienteResource } from "@/http/cliente-resource";
+import { clienteResource } from '@/http/cliente-resource';
 
 export default {
   name: 'App',
@@ -30,6 +32,20 @@ export default {
     },
     async buscar(){
       const response = await clienteResource.buscar(this.id);
+      this.resposta = response.data;
+    },
+    async alterar(){
+      const registro= { 'nome': 'gleyson sampaio de oliveira', 'cpf': '897870', 'dataNascimento': '1982-01-01', 'rendaMensal': 1234.5, 'sexo': 'MASCULINO', 'id': 1 }
+      const response = await clienteResource.alterar(registro);
+      this.resposta = response.data;
+    },
+    async incluir(){
+      const registro= { 'nome': 'marilene sampaio', 'cpf': '4564567', 'dataNascimento': '1967-04-01', 'rendaMensal': 9097.5, 'sexo': 'FEMININO'}
+      const response = await clienteResource.incluir(registro);
+      this.resposta = response.data;
+    },
+    async excluir(){
+      const response = await clienteResource.excluir(this.id);
       this.resposta = response.data;
     }
   }
