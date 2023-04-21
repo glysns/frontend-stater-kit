@@ -1,4 +1,4 @@
-import ROOT_API from 'index';
+import ROOT_API from './index';
 
 export default class Resources {
     constructor(path) {

@@ -5,7 +5,7 @@ const ROOT_API = axios.create({
 })
 
 
-//** REMOVA SE NÃO PRECISAR */
+//** DESCOMENTE SE PRECISAR */
 
 //PARA APIS QUE POSSUEM ADAPTAÇÃO ESTRUTURAL NAS REQUISIÇÕES
 //COMO VALIDAR USO DE TOKEN
@@ -18,7 +18,7 @@ ROOT_API.interceptors.request.use(function(config){
 
 */
 
-//** REMOVA SE NÃO PRECISAR */
+//** DESCOMENTE SE PRECISAR */
 
 //PARA APIS QUE POSSUEM ADAPTAÇÃO ESTRUTURAL NAS RESPOTAS
 //COMO UMA RESPOSTA CUSTOMIZADA
@@ -36,8 +36,9 @@ ROOT_API.interceptors.response.use(function (res) {
 */
 
 
-//** REMOVA SE NÃO PRECISAR */
+//** DESCOMENTE SE PRECISAR */
 
+/*
 const response = function(res){
     const response =
         {
@@ -49,6 +50,6 @@ const response = function(res){
         }
     return response;
 }
-
+*/
 export default ROOT_API;
 
