@@ -23,7 +23,7 @@ Após a instalação das ferramentas citadas acima você poderá optar pela expl
 |Tecnologia|Descrição|
 |----------|---------|
 |Vanilla|Exemplo de aplicações desenvolvidas com HTML, CSS e JavaScript puro|
-|Vue JS| Exemplo de aplicações desenvolvidas com Vue JS|
+|[Vue JS](https://github.com/glysns/frontend-stater-kit/tree/main/vue)| Exemplo de aplicações desenvolvidas com Vue JS|
 |Angular| Exemplo de aplicações desenvolvidas com Angular|
 |React| Exemplo de aplicações desenvolvidas com React|
 
