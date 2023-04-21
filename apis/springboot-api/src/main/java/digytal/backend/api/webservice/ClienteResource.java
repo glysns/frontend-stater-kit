@@ -29,11 +29,11 @@ public class ClienteResource {
     }
     @PutMapping("/{id}")
     public Response put(@PathVariable("id") Integer id, @RequestBody ClienteRequest request){
-        return ResponseFactory.ok(service.save(request),"Cliente alterado com sucesso");
+        return ResponseFactory.ok(service.update(id,request),"Cliente alterado com sucesso");
     }
     @GetMapping()
-    public List<ClienteResponse> listAll(){
-        return service.listAll();
+    public Response  listAll(){
+        return ResponseFactory.ok(repository.findAll());
     }
     @GetMapping("/{id}")
     public Response getOne(@PathVariable("id") Integer id){
