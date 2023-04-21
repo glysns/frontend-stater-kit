@@ -68,4 +68,6 @@ Abre o seu navegador e cole a url abaixo
 ```shell
 http://localhost:8080/
 ```
+
+![image](https://github.com/glysns/frontend-stater-kit/blob/main/img/vue.png)
  
