@@ -37,3 +37,35 @@ yarn global upgrade --latest @vue/cli
 ```
 
 ### Criando um projeto
+
+Usando um terminal de sua preferência, realize os comandos abaixo:
+
+>Selecione um diretório que NÃO esteja sincronizado com alguma serviço como One Drive ou Google Drive.
+
+```shell
+vue create vue-starter-kit
+```
+
+Selecione a opção : **Default ([Vue 3] babel, eslint)**
+
+
+### Iniciando a aplicação
+
+Acesse a pasta do projeto
+
+```shell
+cd vue-starter-kit
+```
+
+Inicie a aplicação
+
+```shell
+npm run serve
+```
+
+Abre o seu navegador e cole a url abaixo
+
+```shell
+http://localhost:8080/
+```
+ 
