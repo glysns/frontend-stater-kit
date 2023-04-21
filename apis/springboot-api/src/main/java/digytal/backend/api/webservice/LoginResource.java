@@ -18,7 +18,7 @@ import org.springframework.web.bind.annotation.RestController;
 public class LoginResource {
     @PostMapping("/login")
     public Response login(@RequestBody Login login){
-        if(login.getUsername().equals("gleyson") && login.getPassword().equals("Jwt@123") ){
+        if(login.getUsername().equals("digytal") && login.getPassword().equals("Jwt@123") ){
             Session session = new Session();
             session.setUsername(login.getUsername());
 
