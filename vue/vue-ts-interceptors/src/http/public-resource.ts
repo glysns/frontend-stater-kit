@@ -1,6 +1,6 @@
 import Resources from "./resources";
 
-class ClienteResource extends Resources {
+class PublicResource extends Resources {
     
     constructor() {
         super("public");
@@ -10,4 +10,4 @@ class ClienteResource extends Resources {
     }
 }
 
-export const publicResource = new ClienteResource()
+export const publicResource = new PublicResource()
