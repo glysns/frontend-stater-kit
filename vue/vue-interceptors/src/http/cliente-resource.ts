@@ -25,8 +25,6 @@ class ClienteResource extends Resources {
     excluir(id: any): Promise<any> {
         return this.delete(id);
     }
-
-    
 }
 
 export const clienteResource = new ClienteResource()

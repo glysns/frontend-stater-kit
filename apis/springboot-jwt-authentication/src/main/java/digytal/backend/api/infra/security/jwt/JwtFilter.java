@@ -11,6 +11,7 @@ import javax.servlet.http.HttpServletResponse;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import digytal.backend.api.infra.handler.ResponseFactory;
 import digytal.backend.api.infra.handler.exceptions.BusinessException;
+import digytal.backend.api.infra.handler.exceptions.TokenInvalidoException;
 import org.springframework.http.HttpStatus;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
@@ -51,7 +52,7 @@ public class JwtFilter extends OncePerRequestFilter {
             SecurityContextHolder.clearContext();
             response.setStatus(HttpStatus.FORBIDDEN.value());
             response.setContentType("application/json");
-            String json = mapper.writeValueAsString(ResponseFactory.exception(new BusinessException("Erro de autenticação","403","Favor revise seus credenciais")));
+            String json = mapper.writeValueAsString(ResponseFactory.exception(new TokenInvalidoException()));
             response.getWriter().write(json);
         }
     }
