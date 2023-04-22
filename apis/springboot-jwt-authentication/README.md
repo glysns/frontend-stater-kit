@@ -70,7 +70,7 @@ De acordo com as novas configurações teremos um novo endpoint `POST:/public/lo
 ![image](https://github.com/glysns/backend-stater-kit/blob/main/spring/springboot-crud-api/src/main/resources/img/login.png)
 ```json
 {
-  "username": "gleyson",
+  "username": "digytal",
   "password": "Jwt@123"
 }
 ```
