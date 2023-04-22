@@ -45,8 +45,12 @@ export default defineComponent({
       body.value = JSON.stringify(response.data,null, 2);
       console.log('busca concluida ... ')
     }
-
+    function reset(){
+      resposta.value = 'AGUARDANDO ...';
+      body.value = 'AGUARDANDO ...';
+    }
     async function alterar(){
+      reset()
       const registro= { 'nome': 'gleyson sampaio de oliveira', 'cpf': '897870', 'dataNascimento': '1982-01-01', 'rendaMensal': 1234.5, 'sexo': 'MASCULINO', 'id': 1 }
       console.log('alterando ... ')
       const response = await clienteResource.alterar(1,registro);
@@ -56,6 +60,8 @@ export default defineComponent({
     }
 
     async function incluir(){
+      reset()
+      
       const registro= { 'nome': 'marilene sampaio', 'cpf': '4564567', 'dataNascimento': '1967-04-01', 'rendaMensal': 9097.5, 'sexo': 'FEMININO'}
       console.log('incluindo ... ')
       const response = await clienteResource.incluir(registro);
@@ -65,6 +71,8 @@ export default defineComponent({
     }
 
     async function excluir(){
+      reset()
+      
       console.log('excluindo ... ')
       const response = await clienteResource.excluir(id.value);
       resposta.value = JSON.stringify(response,null, 2);
@@ -73,15 +81,25 @@ export default defineComponent({
     }
 
     async function logar(){
+      reset()
+      
+      localStorage.removeItem('token');
       console.log('logando ... ')
       const registro= {'username': 'digytal','password': 'Jwt@123'}
       const response = await publicResource.logar(registro);
       resposta.value = JSON.stringify(response,null, 2);
       body.value = JSON.stringify(response.data,null, 2);
       console.log('login realizado com sucesso ')
+
+
+      //atualizando o localStorage com token e usuario
+      localStorage.setItem('token',response.data.body.token);
     }
     
     async function logarErro(){
+      reset()
+      
+      localStorage.removeItem('token');
       console.log('logando ... ')
       const registro= {'username': 'desconhecido','password': 'errada'}
       const response = await publicResource.logar(registro);

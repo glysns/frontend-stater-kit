@@ -11,8 +11,9 @@ ROOT_API.interceptors.request.use(
     if(cfg.url?.includes('public') || cfg.url?.includes('login'))
       console.log('rota publica')
     else{
-      const token = localStorage.getItem('token');
-      cfg.headers['Authorization'] = 'ERA PARA SER O TOKEN';
+      const token = localStorage.getItem('token')
+      console.log('obtendo o token do localStorage', token)
+      cfg.headers['Authorization'] = token;
     }
     return cfg
   }
