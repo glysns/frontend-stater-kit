@@ -6,9 +6,14 @@
 #### Autores
 - [Gleyson Sampaio](https://github.com/glysns)
 
-## FrontEnd - StarterKit - Vue JS - Axios - TS - Composition API
+## FrontEnd - StarterKit - Vue JS - Axios - TypeScript
 
-Este projeto foi criado através do projeto [Vue3 - Axios](https://github.com/glysns/frontend-stater-kit/tree/main/vue/vue-axios) para explorar exemplos de como consumir uma API Rest utilizando Axios e sendo implementado seguindo os padrões do TypeScript e Composition API.
+Este projeto foi criado através do projeto [Vue3 - Axios](https://github.com/glysns/frontend-stater-kit/tree/main/vue/vue-axios) para explorar exemplos de como consumir uma API Rest utilizando Axios e sendo implementado seguindo os padrões do TypeScript.
+
+O ponto relevante é que agora na criação do projeto, foi selecionada a opção: **Manually select features**
+
+![image](https://github.com/glysns/frontend-stater-kit/blob/main/img/vue-ts.png)
+
 ### Instalando dependências
 
 ```shell
@@ -35,8 +40,6 @@ npm run serve
 ```shell
 http://localhost:8080/
 ```
-
-![image](https://github.com/glysns/frontend-stater-kit/blob/main/img/vue.png)
 
 ### Compilação para produção
 
