@@ -8,7 +8,7 @@
 
 ## FrontEnd - StarterKit - Vue JS - Axios - TS - Composition API
 
-Este projeto foi criado através do projeto [Vue3 - Axios](https://github.com/glysns/frontend-stater-kit/tree/main/vue/vue-axios-starter-kit) para explorar exemplos de como consumir uma API Rest utilizando Axios e sendo implementado seguindo os padrões do TypeScript e Composition API.
+Este projeto foi criado através do projeto [Vue3 - Axios](https://github.com/glysns/frontend-stater-kit/tree/main/vue/vue-axios) para explorar exemplos de como consumir uma API Rest utilizando Axios e sendo implementado seguindo os padrões do TypeScript e Composition API.
 ### Instalando dependências
 
 ```shell
@@ -20,7 +20,7 @@ npm install
 Axios é umas das alternativas para se realizar requisições HTTP.
 
 ```shell
-npm i axios
+npm install axios
 
 ```
 
