@@ -7,58 +7,79 @@
     <button @click='incluir()'>Incluir Novo</button>
     <button @click='excluir()'>Excluir</button>
     <input type='text' placeholder='ID' size='1' v-model='id'/>
-    <h4>Resposta</h4>
+    <h4>Resposta Ref</h4>
     {{  resposta }}
+    <h4>Resposta Reativa</h4>
+    {{  body }}
+
+    <h4 @click="showBody">Show</h4>
+    {{  bodys }}
   </div>
 
 </template>
 <script lang="ts">
-import { defineComponent } from 'vue'
+import { defineComponent, ref, reactive } from 'vue'
 
 import { clienteResource } from '@/http/cliente-resource';
 
-
 export default defineComponent({
-  data(){
-    return {
-      id:0,
-      resposta:'SEM RESPOSTA'
-    } 
-  },
-  methods:{
-    async listar(){
+  setup() {
+    let id = ref(0);
+    let resposta = ref('SEM RESPOSTA');
+    let body = ref({});
+    let bodys = ref({});
+
+    async function listar(){
       console.log('listando ... ')
       const response:any = await clienteResource.listar();
-      this.resposta = response.data;
+      resposta.value = response.data;
+      body.value = response.data;
+      console.log(body)
       console.log('listagem concluida ')
-    },
-    async buscar(){
+    }
+
+    async function buscar(){
       console.log('buscando ... ')
-      const response = await clienteResource.buscar(this.id);
-      this.resposta = response.data;
+      const response = await clienteResource.buscar(id.value);
+      resposta.value = response.data;
       console.log('busca concluida ... ')
-    },
-    async alterar(){
+    }
+
+    async function alterar(){
       const registro= { 'nome': 'gleyson sampaio de oliveira', 'cpf': '897870', 'dataNascimento': '1982-01-01', 'rendaMensal': 1234.5, 'sexo': 'MASCULINO', 'id': 1 }
       console.log('alterando ... ')
       const response = await clienteResource.alterar(1,registro);
-      this.resposta = response.data;
+      resposta.value = response.data;
       console.log('alteração concluida ... ')
-    },
-    async incluir(){
+    }
+
+    async function incluir(){
       const registro= { 'nome': 'marilene sampaio', 'cpf': '4564567', 'dataNascimento': '1967-04-01', 'rendaMensal': 9097.5, 'sexo': 'FEMININO'}
       console.log('incluindo ... ')
       const response = await clienteResource.incluir(registro);
-      this.resposta = response.data;
+      resposta.value = response.data;
       console.log('inclusão concluida ... ')
-    },
-    async excluir(){
+    }
+
+    async function excluir(){
       console.log('excluindo ... ')
-      const response = await clienteResource.excluir(this.id);
-      this.resposta = response.data;
+      const response = await clienteResource.excluir(id.value);
+      resposta.value = response.data;
       console.log('exclusão concluida ... ')
     }
+
+    const showBody = () => {
+      alert('SHOW')
+        bodys.value = body
+    }
+
+    return{
+      id, resposta, body, bodys,
+      listar,buscar, incluir, alterar, excluir, showBody
+    }
   }
+
+  
 })
 </script>
 
