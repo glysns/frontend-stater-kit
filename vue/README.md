@@ -71,3 +71,9 @@ http://localhost:8080/
 
 ![image](https://github.com/glysns/frontend-stater-kit/blob/main/img/vue.png)
  
+
+
+
+
+
+* https://www.youtube.com/watch?v=-3j-LE1d1yg

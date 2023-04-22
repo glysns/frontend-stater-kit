@@ -6,9 +6,9 @@
 #### Autores
 - [Gleyson Sampaio](https://github.com/glysns)
 
-## FrontEnd - StarterKit - Vue JS
+## FrontEnd - StarterKit - Vue JS - Axios - TS - Composition API
 
-Este projeto foi criado através do tutorial criando um projeto [Vue3](https://github.com/glysns/frontend-stater-kit/tree/main/vue) para explorar exemplos de como consumir uma API Rest utilizando Axios.
+Este projeto foi criado através do projeto [Vue3 - Axios](https://github.com/glysns/frontend-stater-kit/tree/main/vue/vue-axios-starter-kit) para explorar exemplos de como consumir uma API Rest utilizando Axios e sendo implementado seguindo os padrões do TypeScript e Composition API.
 ### Instalando dependências
 
 ```shell
