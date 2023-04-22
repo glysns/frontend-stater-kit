@@ -14,6 +14,13 @@
     <textarea v-model="resposta" rows="15" cols="100" :style="{ 'background': color }"></textarea>
     <h4>Resposta Data (Body)</h4>
     <textarea v-model="body" rows="15" cols="100" :style="{ 'background': color }"></textarea>
+
+    <h4>Login Input</h4>
+    <input placeholder="usuario" v-model="login.usuario">
+    <input placeholder="senha" v-model="login.senha">
+    <button @click='logarInput()'>Login Input</button>
+    <p>{{login}}</p>
+
   </div>
 
 </template>
@@ -26,6 +33,7 @@ import { AxiosError } from 'axios';
 
 export default defineComponent({
   setup() {
+    let login = ref({'usuario':'admin@digytal.com.br','senha':'123'})
     let id = ref(0);
     let resposta = ref('SEM RESPOSTA');
     let body = ref('SEM CORPO');
@@ -92,7 +100,7 @@ export default defineComponent({
         const response:any = await clienteResource.excluir(id.value);
         resposta.value = JSON.stringify(response,null, 2);
         body.value = JSON.stringify(response.data,null, 2);
-        color.value='greenyellow'
+        color.value='#0bfc04'
       }
 
       catch (e) {
@@ -101,7 +109,7 @@ export default defineComponent({
 
           resposta.value = JSON.stringify(err,null, 2);
           body.value = JSON.stringify(err?.data,null, 2);
-          color.value='red'
+          color.value='#fc2947'
       }
       
       console.log('exclusao concluida ')
@@ -135,9 +143,31 @@ export default defineComponent({
       console.log('login realizado com sucesso ')
     }
 
+    async function logarInput(){
+      reset()
+      
+      localStorage.removeItem('token');
+      try {
+        const response:any = await publicResource.logar(login.value);
+
+        resposta.value = JSON.stringify(response,null, 2);
+        body.value = JSON.stringify(response.data,null, 2);
+        color.value='#0bfc04'
+        localStorage.setItem('token',response.data.body.token);
+      }
+
+      catch (e) {
+          const err:any = (e as AxiosError).response;
+          console.log(err)
+
+          resposta.value = JSON.stringify(err,null, 2);
+          body.value = JSON.stringify(err?.data,null, 2);
+          color.value='#fc2947'
+      }
+    }
     return{
-      id, resposta, body, color,
-      listar,buscar, incluir, alterar, excluir, logar, logarErro
+      id, resposta, body, color,login,
+      listar,buscar, incluir, alterar, excluir, logar, logarErro,logarInput
     }
   }
 
