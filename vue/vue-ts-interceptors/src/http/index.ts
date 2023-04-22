@@ -24,30 +24,4 @@ ROOT_API.interceptors.request.use(
 
 )
 
-ROOT_API.interceptors.response.use(
-
-  (res) => {
-    console.log('response');
-    console.log(res);
-    return response(res);
-  },
-  (err)=>{
-    console.log('request - error')
-    return Promise.reject(response(err))
-  }
-
-)
-
-const response = function(res:AxiosResponse) : AxiosResponse{
-  const response :AxiosResponse = 
-   {
-    data:res.data?.body,
-    status:res.status,
-    statusText:res.statusText,
-    headers:res.headers,
-    config:res.config
-  }
-  console.log(response)
-  return response;
-}
 export default ROOT_API;
