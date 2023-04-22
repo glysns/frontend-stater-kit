@@ -1,26 +1,32 @@
-import http from "./index";
+import Resources from "./resources";
 
-class ClienteResource {
-    servico = "/clientes";
+class ClienteResource extends Resources {
+    
+    constructor() {
+        super("clientes");
+    }
+    
     listar(): Promise<any> {
-        return http.get(this.servico);
+        return this.get('');
     }
 
     buscar(id: any): Promise<any> {
-        return http.get(`${this.servico}/${id}`);
+        return this.get(`/${id}`);
     }
 
     incluir(data: any): Promise<any> {
-        return http.post(this.servico, data);
+        return this.post('',data);
     }
 
     alterar(id: any, data: any): Promise<any> {
-        return http.put(`${this.servico}/${id}`, data);
+        return this.put(id, data);
     }
 
     excluir(id: any): Promise<any> {
-        return http.delete(`${this.servico}/${id}`);
+        return this.delete(id);
     }
+
+    
 }
 
 export const clienteResource = new ClienteResource()
