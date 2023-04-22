@@ -23,5 +23,16 @@ ROOT_API.interceptors.request.use(
   }
 
 )
+ROOT_API.interceptors.response.use(
 
+  (res) => {
+    console.log('response');
+    return res;
+  },
+  (err)=>{
+    console.log('response - error')
+    return Promise.reject(err)
+  }
+
+)
 export default ROOT_API;

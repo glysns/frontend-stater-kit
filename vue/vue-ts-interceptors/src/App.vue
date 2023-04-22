@@ -11,9 +11,9 @@
     <input type='text' placeholder='ID' size='1' v-model='id'/>
     
     <h4>Resposta</h4>
-    <textarea v-model="resposta" rows="15" cols="100"></textarea>
+    <textarea v-model="resposta" rows="15" cols="100" :style="{ 'background': color }"></textarea>
     <h4>Resposta Data (Body)</h4>
-    <textarea v-model="body" rows="15" cols="100"></textarea>
+    <textarea v-model="body" rows="15" cols="100" :style="{ 'background': color }"></textarea>
   </div>
 
 </template>
@@ -22,19 +22,32 @@ import { defineComponent, ref, reactive } from 'vue'
 
 import { clienteResource } from '@/http/cliente-resource';
 import { publicResource } from '@/http/public-resource';
+import { AxiosError } from 'axios';
 
 export default defineComponent({
   setup() {
     let id = ref(0);
     let resposta = ref('SEM RESPOSTA');
     let body = ref('SEM CORPO');
-    
+    let color = ref('white');
     async function listar(){
       console.log('listando ... ')
-      const response:any = await clienteResource.listar();
-      resposta.value = response;
-      body.value = response.data;resposta.value = JSON.stringify(response,null, 2);
-      body.value = JSON.stringify(response.data,null, 2);
+      try {
+        const response:any = await clienteResource.listar();
+        resposta.value = JSON.stringify(response,null, 2);
+        body.value = JSON.stringify(response.data,null, 2);
+        color.value='greenyellow'
+      }
+
+      catch (e) {
+          const err:any = (e as AxiosError).response;
+          alert(err?.data.message);
+
+          resposta.value = JSON.stringify(err,null, 2);
+          body.value = JSON.stringify(err?.data,null, 2);
+          color.value='red'
+      }
+      
       console.log('listagem concluida ')
     }
 
@@ -74,10 +87,24 @@ export default defineComponent({
       reset()
       
       console.log('excluindo ... ')
-      const response = await clienteResource.excluir(id.value);
-      resposta.value = JSON.stringify(response,null, 2);
-      body.value = JSON.stringify(response.data,null, 2);
-      console.log('exclusão concluida ... ')
+  
+      try {
+        const response:any = await clienteResource.excluir(id.value);
+        resposta.value = JSON.stringify(response,null, 2);
+        body.value = JSON.stringify(response.data,null, 2);
+        color.value='greenyellow'
+      }
+
+      catch (e) {
+          const err:any = (e as AxiosError).response;
+          alert(err?.data.message);
+
+          resposta.value = JSON.stringify(err,null, 2);
+          body.value = JSON.stringify(err?.data,null, 2);
+          color.value='red'
+      }
+      
+      console.log('exclusao concluida ')
     }
 
     async function logar(){
@@ -109,7 +136,7 @@ export default defineComponent({
     }
 
     return{
-      id, resposta, body,
+      id, resposta, body, color,
       listar,buscar, incluir, alterar, excluir, logar, logarErro
     }
   }
@@ -127,4 +154,5 @@ export default defineComponent({
   color: #2c3e50;
   margin-top: 60px;
 }
+
 </style>
