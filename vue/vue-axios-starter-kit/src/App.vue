@@ -27,26 +27,36 @@ export default {
   },
   methods:{
     async listar(){
+      console.log('listando ... ')
       const response = await clienteResource.listar();
       this.resposta = response.data;
+      console.log('listagem concluida ')
     },
     async buscar(){
+      console.log('buscando ... ')
       const response = await clienteResource.buscar(this.id);
       this.resposta = response.data;
+      console.log('busca concluida ... ')
     },
     async alterar(){
       const registro= { 'nome': 'gleyson sampaio de oliveira', 'cpf': '897870', 'dataNascimento': '1982-01-01', 'rendaMensal': 1234.5, 'sexo': 'MASCULINO', 'id': 1 }
+      console.log('alterando ... ')
       const response = await clienteResource.alterar(registro);
       this.resposta = response.data;
+      console.log('alteração concluida ... ')
     },
     async incluir(){
       const registro= { 'nome': 'marilene sampaio', 'cpf': '4564567', 'dataNascimento': '1967-04-01', 'rendaMensal': 9097.5, 'sexo': 'FEMININO'}
+      console.log('incluindo ... ')
       const response = await clienteResource.incluir(registro);
       this.resposta = response.data;
+      console.log('inclusão concluida ... ')
     },
     async excluir(){
+      console.log('excluindo ... ')
       const response = await clienteResource.excluir(this.id);
       this.resposta = response.data;
+      console.log('exclusão concluida ... ')
     }
   }
 }
