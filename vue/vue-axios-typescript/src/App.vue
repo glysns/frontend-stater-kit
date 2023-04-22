@@ -15,6 +15,9 @@
 <script lang="ts">
 import { defineComponent } from 'vue'
 
+import { clienteResource } from '@/http/cliente-resource';
+
+
 export default defineComponent({
   data(){
     return {
@@ -25,8 +28,8 @@ export default defineComponent({
   methods:{
     async listar(){
       console.log('listando ... ')
-      //const response = await clienteResource.listar();
-      //this.resposta = response.data;
+      const response:any = await clienteResource.listar();
+      this.resposta = response.data;
       console.log('listagem concluida ')
     },
     async buscar(){
