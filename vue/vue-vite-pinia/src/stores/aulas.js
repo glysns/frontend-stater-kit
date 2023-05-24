@@ -20,9 +20,16 @@ export const aulasStore = defineStore('aulas', {
         aula.situacao.dataHoraInicio = new Date();
     },
     concluirAula( id ){
+        //integração -> response
         const aula = this.aulas.find( (x) => x.id ==id );
         aula.situacao.dataHoraFim = new Date();
         aula.assistida=true
+
+        //try / catch
+    },
+
+    async integrar (){
+
     }
   }
 })
