@@ -17,8 +17,10 @@ function assistirAula( id){
   store.assistirAula(id)
 }
 
-function concluirAula( id){
-  store.concluirAula(id)
+async function concluirAula( id){
+  console.log('processando conclusão aula')
+  await store.concluirAula(id)
+  console.log('conclusão aula realizada com sucesso')
 }
 
 </script>
