@@ -1,25 +1,27 @@
 <script setup>
-import { ref, onMounted } from 'vue'
+import { ref, onMounted, computed } from 'vue'
 import { aulasStore } from '../stores/aulas'
+const store = aulasStore();
 
-// reactive state
-const count = ref(0)
+const aulas = store.aulas;
+//só para o component atual - se precisar globalizar
+//use o getters da store
+const size = computed(()=>store.size)
 
-// functions that mutate state and trigger updates
-function increment() {
-  count.value++
-}
-
-// lifecycle hooks
+const exists = store.exists(10);
 onMounted(() => {
-  console.log(`The initial count is ${count.value}.`)
+  
 })
+
 </script>
 
 <template>
   <div>
     <h1>This is HOME page</h1>
-    <button @click="increment">Count is: {{ count }}</button>
+    <p>total de aulas: {{ size }}</p> 
+    {{ aulas }}
+    <p></p>
+    {{ exists }}
   </div>
 </template>
 
