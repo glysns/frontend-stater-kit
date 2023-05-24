@@ -1,9 +1,14 @@
 <script setup>
+import { storeToRefs } from 'pinia';
 import { ref, onMounted, computed } from 'vue'
 import { aulasStore } from '../stores/aulas'
 const store = aulasStore();
 
-const aulas = store.aulas;
+//const aulas = store.aulas;
+
+//destruction
+const {aulas} = storeToRefs(store);
+
 //só para o component atual - se precisar globalizar
 //use o getters da store
 const size = computed(()=>store.size)
