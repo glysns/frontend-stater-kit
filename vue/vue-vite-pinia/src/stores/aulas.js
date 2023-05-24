@@ -12,5 +12,17 @@ export const aulasStore = defineStore('aulas', {
     exists:(state) => {
         return (id) => state.aulas.some(a=>a.id==id)
     }
+  },
+  actions:{
+    //atualiza os nossos states
+    assistirAula( id ){
+        const aula = this.aulas.find( (x) => x.id ==id );
+        aula.situacao.dataHoraInicio = new Date();
+    },
+    concluirAula( id ){
+        const aula = this.aulas.find( (x) => x.id ==id );
+        aula.situacao.dataHoraFim = new Date();
+        aula.assistida=true
+    }
   }
 })

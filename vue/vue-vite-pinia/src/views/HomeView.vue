@@ -13,15 +13,32 @@ onMounted(() => {
   
 })
 
+function assistirAula( id){
+  store.assistirAula(id)
+}
+
+function concluirAula( id){
+  store.concluirAula(id)
+}
+
 </script>
 
 <template>
   <div>
     <h1>This is HOME page</h1>
     <p>total de aulas: {{ size }}</p> 
-    {{ aulas }}
+    
     <p></p>
     {{ exists }}
+
+    <template v-for="(a) in aulas" :key="a.id">
+      <p></p> 
+      <button @click="assistirAula(a.id)">Assisitir {{ a.id }} - {{ a.titulo }}</button>
+      <p></p> 
+      <button @click="concluirAula(a.id)">Concluir {{ a.id }} - {{ a.titulo }}</button> 
+    </template>
+    <p></p> 
+    {{ aulas }}
   </div>
 </template>
 
