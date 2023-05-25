@@ -2,6 +2,7 @@
 import { storeToRefs } from 'pinia';
 import { ref, onMounted, computed } from 'vue'
 import { aulasStore } from '../stores/aulas'
+import {publicResource} from '@/_webservices/public-service'
 const store = aulasStore();
 
 //const aulas = store.aulas;
@@ -28,6 +29,20 @@ async function concluirAula( id){
   console.log('conclusão aula realizada com sucesso')
 }
 
+async function logarOk(){
+  console.log('iniciando login - OK')
+  //OK
+  const response = await publicResource.logar({'email':'convidado@digytal.com.br', 'password':'welcome'});
+  console.log(response);
+  console.log('finalizando login - OK')
+}
+async function logarNo(){
+  console.log('iniciando login - NO')
+  const response = await publicResource.logar({'email':'convidado@digytal.com.br', 'password':'welcomes'});
+  console.log(response);
+  console.log('finalizando login - NO')
+}
+
 </script>
 
 <template>
@@ -46,6 +61,9 @@ async function concluirAula( id){
     </template>
     <p></p> 
     {{ aulas }}
+    <p></p> 
+    <button @click="logarOk()">Logar - OK</button> 
+    <button @click="logarNo()">Logar - NO</button> 
   </div>
 </template>
 

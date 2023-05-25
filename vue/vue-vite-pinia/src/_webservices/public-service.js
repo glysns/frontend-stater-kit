@@ -7,6 +7,9 @@ class PublicResource extends Resources {
     logar(login) {
         return this.post('/login',login);
     }
+    teste() {
+        console.log('teste')
+    }
 }
 
 export const publicResource = new PublicResource()

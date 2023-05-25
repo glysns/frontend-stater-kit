@@ -37,4 +37,25 @@ export default class Resources {
         console.log('DELETE', url);
         return http.delete(url)
     }
+
+    config(params){
+        //** REMOVA SE NÃO PRECISAR */
+        for (const key in params) {
+            if (!params[key]) {
+                delete params[key];
+            }
+        }
+        
+        //** REMOVA SE NÃO PRECISAR */
+        const config={
+            params:params,
+            transformResponse:[function(data){
+                const response = JSON.parse(data);
+                //VC PODE CUSTOMIZAR
+                return response
+            }]
+        }
+        return config;
+    }
+
 }
