@@ -32,14 +32,23 @@ async function concluirAula( id){
 async function logarOk(){
   console.log('iniciando login - OK')
   //OK
-  const response = await publicResource.logar({'email':'convidado@digytal.com.br', 'password':'welcome'});
-  console.log(response);
+  //const response = await publicResource.logar({'email':'convidado@digytal.com.br', 'password':'welcome'});
+  //console.log(response);
+  const {status, data} = await publicResource.logar({'email':'convidado@digytal.com.br', 'password':'welcome'});
+  console.log('status -> ', status)
+  console.log('data -> ', data)
+
   console.log('finalizando login - OK')
 }
 async function logarNo(){
   console.log('iniciando login - NO')
-  const response = await publicResource.logar({'email':'convidado@digytal.com.br', 'password':'welcomes'});
-  console.log(response);
+  //const response = await publicResource.logar({'email':'convidado@digytal.com.br', 'password':'welcomes'});
+  //console.log(response);
+  const {status, data} = await publicResource.logar({'email':'convidado@digytal.com.br', 'password':'welcomes'});
+  
+  console.log('status -> ', status)
+  console.log('data -> ', data)
+
   console.log('finalizando login - NO')
 }
 

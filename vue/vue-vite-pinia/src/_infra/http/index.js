@@ -19,9 +19,7 @@ const response = function(res){
             baseURL:res.config?.baseURL,
             url:res.config?.url,
             data:res.data?.body,
-            message:res.data?.message,
-            success:res.data?.success,
-            code:res.data?.code
+            status:res.data?.status
         }
     return response;
 }
