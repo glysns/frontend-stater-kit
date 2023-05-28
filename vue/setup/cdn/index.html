@@ -1,0 +1,43 @@
+<html>
+
+<head>
+  <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+</head>
+
+<body>
+
+  <div id="app">
+    <label>Usuario</label>
+    <input v-model="login.usuario"/>
+    <p></p>
+    <label>Senha</label>
+    <input v-model="login.senha"/>
+    <p></p>
+    <button v-on:click="logar()">Contar</button>
+    
+    <p>{{login}}</p>
+
+
+  </div>
+
+  <script>
+    const { createApp } = Vue
+
+    createApp({
+      data() {
+        return {
+          numero:0,
+          login:{'usuario':'', senha:''}
+        }
+      },
+      methods:{
+        logar(){
+          alert('Bem-vindo ' + this.login.usuario)
+        }
+      }
+    }).mount('#app')
+  </script>
+  
+</body>
+
+</html>
